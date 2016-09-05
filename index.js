@@ -1,6 +1,5 @@
 const fetch = require('node-fetch');
 const composeDictionaryEntry = require('./utils/composeDictionaryEntry.js');
-const urls = require('./urls.json');
 const fs = require('fs');
 
 fs.readFile('./words.txt', 'utf8', function (err, data) {
