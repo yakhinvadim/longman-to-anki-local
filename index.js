@@ -32,11 +32,10 @@ fs.readFile('./words.txt', 'utf8', function (err, data) {
 function findCorrectUrls(words) {
   return words
     .map(word => `http://www.ldoceonline.com/dictionary/${word}`)
-    .map(url => isCorrectUrl(url) ? url : `${url}_1`)
-}
-
-function isCorrectUrl(url) {
-  fetch(url)
-    .then(resp => resp.ok)
-    .catch(err => console.log(err))
+    .map(url => fetch(url)
+      .then(resp => {
+        return resp.ok ? url : `${url}_1`}
+      )
+      .catch(err => console.log(err))
+    )
 }
