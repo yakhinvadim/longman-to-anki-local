@@ -29,13 +29,9 @@ fs.readFile('./words.txt', 'utf8', function (err, data) {
     .catch(err => console.log(err));
 });
 
-function makeUrl(word) {
-  return `http://www.ldoceonline.com/dictionary/${word}`
-}
-
 function findCorrectUrls(words) {
   return words
-    .map(makeUrl)
+    .map(word => `http://www.ldoceonline.com/dictionary/${word}`)
     .map(url => fetch(url)
       .then(resp => {
         return resp.ok ? url : `${url}_1`}
