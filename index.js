@@ -4,7 +4,7 @@ const fs = require('fs');
 
 fs.readFile('./words.txt', 'utf8', function (err, data) {
   if (err) {
-    return console.log(err);
+    throw err;
   }
 
   const words = data
