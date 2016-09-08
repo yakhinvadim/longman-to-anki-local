@@ -19,6 +19,7 @@
   "homepage": "https://github.com/yakhinvadim/longman-to-anki-plus#readme",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "node-fetch": "^1.6.0"
+    "node-fetch": "^1.6.0",
+    "ramda": "^0.22.1"
   }
 }

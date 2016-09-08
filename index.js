@@ -1,41 +1,29 @@
-const fetch = require('node-fetch');
-const composeDictionaryEntry = require('./utils/composeDictionaryEntry.js');
 const fs = require('fs');
+const R = require('ramda');
+const fetch = require('node-fetch');
+
+const getCorrectUrls = require('./utils/getCorrectUrls.js');
+const composeDictionaryEntry = require('./utils/composeDictionaryEntry.js');
 
 fs.readFile('./words.txt', 'utf8', function (err, data) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
 
-  const words = data
-    .split(',')
-    .map(item => item.trim())
+  const words = data.split(',').map(item => item.trim());
+  const correctUrls = words.map(word => getCorrectUrls(word));
 
   Promise.all(
-    findCorrectUrls(words)
+    correctUrls
   )
-    .then(urls =>
-      Promise.all(
-        urls.map(url => fetch(url)
+    .then(urls => Promise.all(
+      R.flatten(urls).map(
+        url => fetch(url)
           .then(res => res.text())
-        )
       )
-    )
+    ))
     .then(bodies => bodies.map(composeDictionaryEntry))
     .then(entries => entries.reduce(
-      (body, acc) => `${acc}${body}`
-    ))
+      (card, cards) => `${cards}${card}`
+    ), '')
     .then(result => fs.writeFileSync('result.txt', result))
-    .catch(err => console.log(err));
+    .catch(err => throw err);
 });
-
-function findCorrectUrls(words) {
-  return words
-    .map(word => `http://www.ldoceonline.com/dictionary/${word}`)
-    .map(url => fetch(url)
-      .then(resp => {
-        return resp.ok ? url : `${url}_1`}
-      )
-      .catch(err => console.log(err))
-    )
-}
