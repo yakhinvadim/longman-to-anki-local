@@ -29,5 +29,5 @@ module.exports = function getCorrectUrls(word) {
         return correctUrls;
       }
     })
-    .catch(err => throw err);
+    .catch(err => console.log(err));
 }

@@ -6,7 +6,7 @@ const getCorrectUrls = require('./utils/getCorrectUrls.js');
 const composeDictionaryEntry = require('./utils/composeDictionaryEntry.js');
 
 fs.readFile('./words.txt', 'utf8', function (err, data) {
-  if (err) { throw err; }
+  if (err) { console.log(err) }
 
   const words = data.split(',').map(item => item.trim());
   const correctUrls = words.map(word => getCorrectUrls(word));
@@ -25,5 +25,5 @@ fs.readFile('./words.txt', 'utf8', function (err, data) {
       (card, cards) => `${cards}${card}`
     ), '')
     .then(result => fs.writeFileSync('result.txt', result))
-    .catch(err => throw err);
+    .catch(err => console.log(err));
 });
