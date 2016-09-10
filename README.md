@@ -48,3 +48,6 @@ You should see the number of imported notes
 Learn English like a pro
 
 ![Learn English like a pro](https://raw.githubusercontent.com/yakhinvadim/longman-to-anki-plus/master/images/5.png)
+
+## Have questions? 
+You can create an [issue](https://github.com/yakhinvadim/longman-to-anki-plus/issues/new), or write me on [Twitter] (https://mobile.twitter.com/yakhinvadim) 
