@@ -2,7 +2,7 @@
 
 Deprecated. Ldoceonline have made a big redesign, so cards created by this program will be broken.
 
-The same functionality is available in [longman-to-anki-web](https://github.com/yakhinvadim/longman-to-anki-web)
+The same functionality is available in [longman-to-anki](https://github.com/yakhinvadim/longman-to-anki)
 
 ## What is it?
 **longman-to-anki-local** is command line tool to help you learn English words. Type the words you want to learn in words.txt, run the program and get the file with a list of flash cards for these words. File is ready to import by [Anki](http://ankisrs.net/) - most popular flash cards software.
