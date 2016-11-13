@@ -26,11 +26,13 @@ npm install
 ```
 cat, dog, mouse
 ```
+
 2. Run in terminal:
 ```
 npm start
 ```
 Now in current folder should appear `result.txt` with all the flash cards for your words.
+
 3. Import `result.txt` with Anki.
 
 Select import from main screen
