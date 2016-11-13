@@ -55,5 +55,5 @@ The same functionality is available in [longman-to-anki](https://github.com/yakh
 
   ![Learn English like a pro](https://raw.githubusercontent.com/yakhinvadim/longman-to-anki-local/master/images/5.png)
 
-  ## Have questions? 
-  You can create an [issue](https://github.com/yakhinvadim/longman-to-anki-local/issues/new), or write me on [Twitter] (https://mobile.twitter.com/yakhinvadim) 
+## Have questions? 
+You can create an [issue](https://github.com/yakhinvadim/longman-to-anki-local/issues/new), or write me on [Twitter] (https://mobile.twitter.com/yakhinvadim) 
